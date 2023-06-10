@@ -31,12 +31,12 @@ let newObj: IArticle = {
 };
 
 export default class BlogService {
-  url = process.env.REACT_APP_UNSPLASH_URL;
+  _url = process.env.REACT_APP_UNSPLASH_URL;
 
   getArticlesGlobally = async (offset = 0) => {
     const token = getCookie('kataBlogToken');
 
-    const response = await fetch(`https://blog.kata.academy/api/articles?limit=5&offset=${offset}`, {
+    const response = await fetch(`${this._url}/articles?limit=5&offset=${offset}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -57,7 +57,7 @@ export default class BlogService {
   getAnArticle = async (slug: string | undefined | null) => {
     const token = getCookie('kataBlogToken');
 
-    const response = await fetch(`${this.url}/articles/${slug}`, {
+    const response = await fetch(`${this._url}/articles/${slug}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -79,7 +79,7 @@ export default class BlogService {
       article: { ...newObj },
     };
 
-    const response = await fetch(`${this.url}/articles`, {
+    const response = await fetch(`${this._url}/articles`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -102,7 +102,7 @@ export default class BlogService {
       article: { ...newObj },
     };
 
-    const response = await fetch(`${this.url}/articles/${slug}`, {
+    const response = await fetch(`${this._url}/articles/${slug}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -121,7 +121,7 @@ export default class BlogService {
   deleteArticle = async (slug: string | undefined) => {
     const token = getCookie('kataBlogToken');
 
-    await fetch(`${this.url}/articles/${slug}`, {
+    await fetch(`${this._url}/articles/${slug}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -133,7 +133,7 @@ export default class BlogService {
   postFavoriteArticle = async (slug: string | undefined) => {
     const token = getCookie('kataBlogToken');
 
-    await fetch(`${this.url}/articles/${slug}/favorite`, {
+    await fetch(`${this._url}/articles/${slug}/favorite`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -145,7 +145,7 @@ export default class BlogService {
   deleteFavoriteOnArticle = async (slug: string | undefined) => {
     const token = getCookie('kataBlogToken');
 
-    await fetch(`${this.url}/articles/${slug}/favorite`, {
+    await fetch(`${this._url}/articles/${slug}/favorite`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -160,7 +160,7 @@ export default class BlogService {
       errors: {},
     };
 
-    const responseSignUp = await fetch(`${this.url}/users`, {
+    const responseSignUp = await fetch(`${this._url}/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -168,7 +168,7 @@ export default class BlogService {
       body: JSON.stringify(userPost),
     });
 
-    return getDataFromResponses(responseSignUp, newObj, this.url);
+    return getDataFromResponses(responseSignUp, newObj, this._url);
   };
 
   postSignInUser = async (userPost: IUserPost) => {
@@ -177,7 +177,7 @@ export default class BlogService {
       errors: {},
     };
 
-    const responseSignIn = await fetch(`${this.url}/users/login`, {
+    const responseSignIn = await fetch(`${this._url}/users/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -185,7 +185,7 @@ export default class BlogService {
       body: JSON.stringify(userPost),
     });
 
-    return getDataFromResponses(responseSignIn, newObj, this.url);
+    return getDataFromResponses(responseSignIn, newObj, this._url);
   };
 
   putEditProfile = async (userPut: UserPut) => {
@@ -195,7 +195,7 @@ export default class BlogService {
       errors: {},
     };
 
-    const response = await fetch(`${this.url}/user`, {
+    const response = await fetch(`${this._url}/user`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
