@@ -36,7 +36,7 @@ export default class BlogService {
   getArticlesGlobally = async (offset = 0) => {
     const token = getCookie('kataBlogToken');
 
-    const response = await fetch(`${this.url}/articles?limit=5&offset=${offset}`, {
+    const response = await fetch(`https://blog.kata.academy/api/articles?limit=5&offset=${offset}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
