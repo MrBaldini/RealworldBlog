@@ -1,8 +1,10 @@
 import React from 'react';
 import { Button, message, Popconfirm } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
+
 import { Slug } from '../article';
 import { useActions } from '../../hooks/useActions';
+
 import classes from './article-btns.module.scss';
 
 const ArticleBtns = ({ slug }: Slug) => {
@@ -31,7 +33,7 @@ const ArticleBtns = ({ slug }: Slug) => {
       >
         <Button danger>Delete</Button>
       </Popconfirm>
-      <Link to={`edit`}>
+      <Link to="edit">
         <Button className={classes['div-article-btns__edit-btn']}>Edit</Button>
       </Link>
     </div>

@@ -1,4 +1,5 @@
 import { Dispatch } from 'redux';
+
 import { CreateArticleActionTypes, IPostArticle, NewArticleAction } from '../../types/create-article';
 import { blogService } from '../../services/functions';
 

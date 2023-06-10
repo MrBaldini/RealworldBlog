@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
+
 import classes from './auth-panel-denied.module.scss';
 
 const AuthPanelDenied = () => {

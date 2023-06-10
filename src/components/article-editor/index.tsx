@@ -1,8 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
+
 import { ArticleFormFields } from '../article-form-fields';
-import classes from './article-editor.module.scss';
 import { Slug } from '../article';
+
+import classes from './article-editor.module.scss';
 
 const ArticleEditor = ({ slug }: Slug) => {
   return (

@@ -1,9 +1,11 @@
 import React from 'react';
 import cn from 'classnames';
+
 import ListItems from '../list-items';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import classes from './app-main.module.scss';
 import { ArticlesPagination } from '../articles-pagination';
+
+import classes from './app-main.module.scss';
 
 const AppMain = () => {
   const loading = useTypedSelector((state) => state.articles.loading);

@@ -4,10 +4,12 @@ import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+
 import { useAuth } from '../../hooks/useAuth';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { IUserPost } from '../../types/sign-user';
 import { Spinner } from '../spinner';
+
 import classes from './sign-in-form.module.scss';
 
 type Inputs = {
@@ -15,7 +17,7 @@ type Inputs = {
   password: string;
 };
 
-const SignInForm: React.FC = () => {
+const SignInForm = () => {
   const formSchema = Yup.object().shape({
     email: Yup.string()
       .required('Email address is required')

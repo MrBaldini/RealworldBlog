@@ -4,10 +4,12 @@ import { Link, Navigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { IUserPost } from '../../types/sign-user';
 import { Spinner } from '../spinner';
+
 import classes from './sign-up-form.module.scss';
 
 type Inputs = {
@@ -24,7 +26,7 @@ type HandleSubmitParam = {
   password: string;
 };
 
-const SignUpForm: React.FC = () => {
+const SignUpForm = () => {
   const formSchema = Yup.object().shape({
     username: Yup.string()
       .required('Username is required')

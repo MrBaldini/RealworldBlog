@@ -1,6 +1,7 @@
 import React from 'react';
 import { LoadingOutlined } from '@ant-design/icons';
 import { Spin } from 'antd';
+
 import classes from './spinner.module.scss';
 
 interface ISpinProps {

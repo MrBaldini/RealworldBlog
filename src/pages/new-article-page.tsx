@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { ArticleCreator } from '../components/article-creator';
 
 const NewArticlePage = () => {

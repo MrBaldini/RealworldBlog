@@ -3,11 +3,13 @@ import cn from 'classnames';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { message } from 'antd';
+
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { Spinner } from '../spinner';
+
 import classes from './edit-profile-form.module.scss';
-import { message } from 'antd';
 
 type Inputs = {
   username: string;

@@ -1,11 +1,13 @@
 import React from 'react';
 import cn from 'classnames';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+
 import { useAuth } from '../../hooks/useAuth';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { useActions } from '../../hooks/useActions';
-import classes from './auth-panel-granted.module.scss';
 import avatar from '../item/avatar.svg';
+
+import classes from './auth-panel-granted.module.scss';
 
 const AuthPanelGranted = () => {
   const { newUser, signOut } = useAuth();

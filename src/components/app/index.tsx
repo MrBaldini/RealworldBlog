@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
+
 import { Layout } from '../layout';
 import { NotFoundPage } from '../../pages/not-found-page';
 import { MainPage } from '../../pages/main-page';

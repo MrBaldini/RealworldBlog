@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import cn from 'classnames';
+
 import { Spinner } from '../spinner';
 import Item from '../item';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { useActions } from '../../hooks/useActions';
+
 import classes from './list-items.module.scss';
 
 const ListItems = () => {

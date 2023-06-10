@@ -1,7 +1,9 @@
 import React from 'react';
 import cn from 'classnames';
-import classes from './article-creator.module.scss';
+
 import { ArticleFormFields } from '../article-form-fields';
+
+import classes from './article-creator.module.scss';
 
 const ArticleCreator = () => {
   return (

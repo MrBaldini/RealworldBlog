@@ -3,6 +3,7 @@ import { IPostArticle } from '../types/create-article';
 import { IPutArticle } from '../types/edit-article';
 import { IArticle } from '../types/load-an-article';
 import { IUserPost } from '../types/sign-user';
+
 import { getCookie, getDataFromResponses } from './functions';
 
 const user = {

@@ -5,10 +5,12 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { message } from 'antd';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { Spinner } from '../spinner';
 import { Slug } from '../article';
+
 import classes from './article-form-fields.module.scss';
 
 export interface Inputs {
@@ -28,7 +30,7 @@ const loader = (
 const ArticleFormFields = ({ slug }: Slug) => {
   const tagListSchema = {
     name: Yup.string()
-      .required("If you don't want to add tag, please delete this field")
+      .required('If you don not want to add tag, please delete this field')
       .max(14, 'Tag length cannot exceed more than 14 characters'),
   };
   const formSchema = Yup.object().shape({
@@ -52,11 +54,10 @@ const ArticleFormFields = ({ slug }: Slug) => {
   const defaultTitle = !slug ? '' : title;
   const defaultDescription = !slug ? '' : description;
   const defaultBody = !slug ? '' : body;
-  const defaultTagList = !slug
-    ? []
-    : tagList.map((tag) => {
-        return { name: tag };
-      });
+  const formatedTagList = tagList.map((tag) => {
+    return { name: tag };
+  });
+  const defaultTagList = !slug ? [] : formatedTagList;
   const createdMsg = 'Article created successfully';
   const editedMsg = 'Article edited successfully';
   const typeOfMessage = !slug ? createdMsg : editedMsg;

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
+
 import { useActions } from '../../hooks/useActions';
 import { useAuth } from '../../hooks/useAuth';
+
 import like from './like.svg';
 import redLike from './redLike.svg';
 import classes from './like.module.scss';

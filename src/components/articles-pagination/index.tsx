@@ -1,8 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
 import { Pagination } from 'antd';
+
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { useActions } from '../../hooks/useActions';
+
 import classes from './articles-pagination.module.scss';
 
 const ArticlesPagination = () => {

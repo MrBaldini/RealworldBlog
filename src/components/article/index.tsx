@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
+
 import Item from '../item';
 import { ArticleBtns } from '../article-btns';
 import { Spinner } from '../spinner';
@@ -7,6 +8,7 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { useActions } from '../../hooks/useActions';
 import { useAuth } from '../../hooks/useAuth';
 import { bodyToValid } from '../../services/functions';
+
 import classes from './article.module.scss';
 
 export interface Slug {
