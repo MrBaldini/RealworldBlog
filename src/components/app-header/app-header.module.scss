@@ -1,0 +1,17 @@
+.app__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1440px;
+  height: 80px;
+  background-color: #ffffff;
+  margin-bottom: 26px;
+
+  .header__title-blog {
+    font-size: 18px;
+    line-height: 28px;
+    margin-left: 22px;
+    color: rgba(0, 0, 0, 0.85);
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,21 @@
+.item__div-article-btns {
+  position: absolute;
+  left: 786px;
+  top: 93px;
+
+  .div-article-btns__edit-btn {
+    margin-left: 12px;
+    color: #52c41a;
+    border-color: #52c41a;
+
+    &:hover {
+      color: #53c41a96;
+      border-color: #53c41a98;
+    }
+
+    &:active {
+      color: #52c41a;
+      border-color: #52c41a;
+    }
+  }
+}
